@@ -69,6 +69,23 @@
 - Kịch bản 1 (ít người dùng) có thời gian phản hồi nhanh nhất; kịch bản 3 duy trì hiệu năng ổn định ngay cả khi chạy liên tục 60 giây.
 
 ---
+📊 Tóm tắt các Thread Group
+## Tóm tắt các Thread Group
+
+| Thread Group | Số lượng người dùng | Mục tiêu kiểm thử                                   |
+|--------------|---------------------|-----------------------------------------------------|
+| 1            | 18                  | Tải trang chủ GitHub                                |
+| 2            | 58                  | Truy cập trang `/topics` và `/trending`             |
+| 3            | 33                  | Kiểm thử duy trì tải trong 60 giây trên `/explore` và `/features` |
+📈 Kết quả chi tiết (Summary Report)
+## Kết quả chi tiết (Summary Report)
+
+| Label              | # Samples | Average (ms) | Min (ms) | Max (ms) | Std. Dev. | Error % | Throughput (req/s) | Received KB/sec | Sent KB/sec | Avg. Bytes |
+|--------------------|-----------|--------------|----------|----------|-----------|---------|---------------------|------------------|--------------|-------------|
+| HTTP Request 2.1   | 58        | 130          | 78       | 1191     | 142.44    | 0.000%  | 1.96224             | 582.51           | 0.25         | 303982.2    |
+| HTTP Request       | 18        | 100          | 81       | 140      | 12.61     | 0.000%  | 3.69914             | 1098.01          | 0.48         | 303952.3    |
+| HTTP Request 2.2   | 58        | 124          | 75       | 477      | 67.14     | 0.000%  | 1.95913             | 156.45           | 0.51         | 81775.4     |
+| **TOTAL**          | **134**   | **123**      | **75**   | **1191** | **104.17**| **0.000%** | **4.50905**        | **915.02**       | **0.84**     | **207799.1** |
 
 ## Kết luận
 
